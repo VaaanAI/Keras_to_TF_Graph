@@ -62,7 +62,9 @@ for image in IMAGES:
     img_count += 1
 
     start = time.time()
-    im = cv2.resize(im, (224, 224)).astype('float32')
+
+    ## Image size should be according to the input layer of the model
+    im = cv2.resize(im, (224, 224)).astype('float32') ## (224, 224) for ResNet50V2
 
     img = np.expand_dims(im, axis=0)
 
